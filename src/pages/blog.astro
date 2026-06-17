@@ -24,6 +24,9 @@ const grid = posts.filter(p => !p.featured);
     a { text-decoration: none; color: inherit; }
     .card { transition: border-top-color 0.15s; }
     .card:hover { border-top-color: #E2064A !important; }
+    .card[hidden] { display: none; }
+    .filter-btn { cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .filter-btn.active { background: #E2064A !important; color: #fff !important; border-color: #E2064A !important; }
   </style>
 </head>
 <body>
@@ -58,7 +61,10 @@ const grid = posts.filter(p => !p.featured);
     <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
       <span style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.15em; color:#7A7A7A; margin-right:8px; text-transform:uppercase;">CATEGORÍAS:</span>
       {categories.map((cat, i) => (
-        <button style={`font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:6px 14px; border:1px solid ${i===0?'#E2064A':'#333'}; background:${i===0?'#E2064A':'transparent'}; color:${i===0?'#fff':'#7A7A7A'}; cursor:pointer;`}>
+        <button
+          class={`filter-btn${i===0?' active':''}`}
+          data-cat={cat}
+          style={`font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:6px 14px; border:1px solid ${i===0?'#E2064A':'#333'}; background:${i===0?'#E2064A':'transparent'}; color:${i===0?'#fff':'#7A7A7A'};`}>
           {cat}
         </button>
       ))}
@@ -67,7 +73,7 @@ const grid = posts.filter(p => !p.featured);
 
   <!-- ARTÍCULO DESTACADO -->
   {featured && (
-    <section style="max-width:1100px; margin:0 auto; padding:56px 24px;">
+    <section id="featured-section" data-cat={featured.category} style="max-width:1100px; margin:0 auto; padding:56px 24px;">
       <p style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#ADADAD; margin-bottom:28px; display:flex; align-items:center; gap:12px;">
         <span style="width:32px; height:2px; background:#E2064A; display:inline-block;"></span>
         ARTÍCULO PRINCIPAL
@@ -103,7 +109,7 @@ const grid = posts.filter(p => !p.featured);
     </p>
     <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:#E3E3E3;">
       {grid.map((post) => (
-        <a href={`/articulos/${post.id}`} class="card" style="background:#fff; padding:28px; display:flex; flex-direction:column; border-top:3px solid transparent;">
+        <a href={`/articulos/${post.id}`} class="card" data-cat={post.category} style="background:#fff; padding:28px; display:flex; flex-direction:column; border-top:3px solid transparent;">
           <div style="margin-bottom:12px;">
             <span style={`font-family:'Saira Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:${catColor[post.category]??'#555'}; border-left:3px solid ${catColor[post.category]??'#555'}; padding-left:8px;`}>{post.category}</span>
           </div>
@@ -185,5 +191,35 @@ const grid = posts.filter(p => !p.featured);
     </div>
   </footer>
 
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+    const cards = document.querySelectorAll<HTMLElement>('.card[data-cat]');
+    const featured = document.getElementById('featured-section') as HTMLElement | null;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selected = btn.dataset.cat!;
+
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          b.style.background = 'transparent';
+          b.style.color = '#7A7A7A';
+          b.style.borderColor = '#333';
+        });
+        btn.classList.add('active');
+        btn.style.background = '#E2064A';
+        btn.style.color = '#fff';
+        btn.style.borderColor = '#E2064A';
+
+        cards.forEach(card => {
+          card.hidden = !(selected === 'Todos' || card.dataset.cat === selected);
+        });
+
+        if (featured) {
+          featured.hidden = !(selected === 'Todos' || featured.dataset.cat === selected);
+        }
+      });
+    });
+  </script>
 </body>
 </html>

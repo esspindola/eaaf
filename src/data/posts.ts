@@ -337,4 +337,78 @@ export const posts: Post[] = [
 <p>Cada familia decide qué hacer con los restos restituidos. Hay quienes eligieron sepulturas en cementerios municipales, con lápidas que por primera vez llevan el nombre completo de la persona desaparecida. Hay quienes realizaron ceremonias laicas en lugares significativos —plazas, ríos, jardines—. Hay quienes guardaron las cenizas en casa y las acompañan de fotos y objetos.</p>
 <p>Y hay quienes, después de décadas sin poder explicarles a los nietos qué había pasado con su abuelo o abuela, finalmente pudieron sentarse a contar la historia completa. Con nombre, con fecha, con lugar, y con la certeza que la ciencia les devolvió.</p>`,
   },
+  {
+    id: 9,
+    category: "Identificación y ADN",
+    title: "Laboratorio de Genética Forense: dónde ocurre la ciencia que devuelve nombres",
+    excerpt: "En Córdoba funciona el laboratorio donde el EAAF procesa muestras de ADN de familias y restos óseos. Te mostramos cómo trabaja, qué tecnologías usa y por qué su rigor científico es la base de cada identificación.",
+    author: "Equipo Científico EAAF",
+    date: "30 abr. 2026",
+    read: "7 min",
+    featured: false,
+    body: `<p>Detrás de cada identificación hay un laboratorio. Un lugar donde batas blancas, microscopios y secuenciadores de última generación transforman fragmentos de hueso en certezas. El Laboratorio de Genética Forense del EAAF, ubicado en la ciudad de Córdoba, es uno de los más especializados de América Latina en análisis de ADN en restos con décadas de antigüedad.</p>
+<p>Conocer cómo trabaja ese laboratorio no es solo información técnica: es entender por qué las identificaciones del EAAF son irrefutables.</p>
+<h3>¿Por qué Córdoba?</h3>
+<p>El laboratorio se estableció en Córdoba por razones prácticas e históricas. La ciudad concentra una alta densidad de casos de la dictadura en el noroeste del país, y su ubicación permite una logística eficiente para el trabajo de campo en varias provincias. Además, el EAAF desarrolló alianzas con la Universidad Nacional de Córdoba y otros centros científicos locales que fortalecen la capacidad analítica del equipo.</p>
+<h3>Qué tecnologías se usan</h3>
+<p>El laboratorio trabaja con tecnologías de genética forense de última generación:</p>
+<ul>
+  <li><strong>Secuenciación de ADN de nueva generación (NGS):</strong> permite analizar muestras muy degradadas que antes eran inviables, obteniendo perfiles genéticos a partir de fragmentos mínimos de material genético.</li>
+  <li><strong>Análisis de STRs (Short Tandem Repeats):</strong> los marcadores genéticos estándar en genética forense, que permiten calcular con precisión la probabilidad de parentesco biológico.</li>
+  <li><strong>ADN mitocondrial:</strong> especialmente útil cuando el ADN nuclear está muy degradado. Se hereda exclusivamente por vía materna y permite rastrear líneas maternas a lo largo de generaciones.</li>
+  <li><strong>Cromosoma Y:</strong> para análisis de líneas paternas directas entre varones de una misma familia.</li>
+</ul>
+<blockquote><p>"Trabajamos con tecnología que hace diez años no existía. Eso significa que casos que eran imposibles de resolver antes, hoy tienen solución."</p></blockquote>
+<h3>El proceso desde que llega una muestra</h3>
+<p>Cuando una muestra de sangre familiar o un fragmento óseo llega al laboratorio, sigue un protocolo estricto:</p>
+<ul>
+  <li>Registro e identificación con código único —nunca con el nombre de la persona, para proteger la confidencialidad.</li>
+  <li>Descontaminación del material para evitar resultados falsos por contaminación externa.</li>
+  <li>Extracción del ADN en área de acceso restringido.</li>
+  <li>Amplificación y secuenciación del perfil genético.</li>
+  <li>Cotejo automatizado contra todos los perfiles en la base de datos.</li>
+  <li>Revisión humana de cada posible coincidencia antes de emitir cualquier resultado.</li>
+</ul>
+<h3>Cuántas muestras se procesan</h3>
+<p>El laboratorio procesa miles de muestras por año, provenientes tanto de Argentina como de los países donde el EAAF tiene operaciones activas: México, El Salvador, Bosnia, Sri Lanka, entre otros. La base de datos de perfiles genéticos de familias crece continuamente, lo que aumenta la probabilidad de nuevas coincidencias con restos ya recuperados.</p>
+<h3>Por qué la ciencia del EAAF es admisible en juicio</h3>
+<p>Los resultados del laboratorio no solo sirven para notificar a las familias: son prueba pericial admisible en juicios penales. Para eso, el laboratorio mantiene protocolos de cadena de custodia estrictos, donde cada movimiento de una muestra queda registrado. Los peritos del EAAF declaran en causas de lesa humanidad en Argentina y en tribunales internacionales, con un historial de credibilidad científica que ninguna defensa ha logrado cuestionar.</p>
+<p>La ciencia que ocurre en ese laboratorio no es abstracta. Es lo que permite que una familia reciba una llamada, un nombre, y la posibilidad —por fin— de despedirse.</p>`,
+  },
+  {
+    id: 10,
+    category: "Preguntas Frecuentes",
+    title: "¿Qué pasa con los restos si no hay familia que los reclame?",
+    excerpt: "No todas las personas identificadas tienen familiares vivos para recibirlas. El EAAF tiene protocolos específicos para garantizar que cada persona recuperada reciba un trato digno, independientemente de su situación familiar.",
+    author: "Redacción EAAF",
+    date: "8 abr. 2026",
+    read: "5 min",
+    featured: false,
+    body: `<p>Es una pregunta que pocas personas hacen en voz alta, pero que muchos se formulan: ¿qué pasa con los restos de una persona identificada si no queda nadie para recibirlos? ¿Si los familiares directos también murieron, o si no se encontró a ningún pariente vivo?</p>
+<p>La respuesta del EAAF combina rigor institucional y profundo respeto por la dignidad de cada persona recuperada.</p>
+<h3>La búsqueda de familiares no se detiene fácilmente</h3>
+<p>Antes de considerar que no hay familia, el EAAF realiza un proceso exhaustivo de búsqueda. Eso incluye:</p>
+<ul>
+  <li>Revisión de registros civiles, documentos judiciales y archivos históricos.</li>
+  <li>Contacto con organizaciones de derechos humanos locales que puedan tener datos de familiares.</li>
+  <li>Publicación en redes y comunicados para que personas que podrían ser parientes tomen conocimiento del caso.</li>
+  <li>Coordinación con organismos internacionales cuando la familia podría estar en el exterior.</li>
+</ul>
+<p>En muchos casos, esta búsqueda recupera vínculos familiares que la propia familia desconocía: primos lejanos, descendientes de hermanos emigrados, personas que no sabían que buscaban a alguien.</p>
+<h3>Qué ocurre cuando no se encuentra nadie</h3>
+<p>Cuando, después de agotar los recursos disponibles, no se localiza a ningún familiar o referente, el EAAF no procede a la destrucción ni al almacenamiento indefinido en condiciones precarias. Los restos son inhumados en un lugar digno, con la identidad ya confirmada consignada en los registros correspondientes.</p>
+<blockquote><p>"Toda persona tiene derecho a un lugar en el mundo, incluso después de la muerte. La identificación garantiza que ese lugar sea conocido y reconocido."</p></blockquote>
+<h3>La identidad queda en el registro, para siempre</h3>
+<p>Lo más importante es que la identificación —el nombre, la fecha, el vínculo con un caso judicial— queda registrada de manera permanente. Eso tiene varias consecuencias:</p>
+<ul>
+  <li>Si en el futuro aparece un familiar que no estaba registrado, puede acceder a esa información y eventualmente a los restos.</li>
+  <li>La identificación puede usarse como prueba en causas judiciales de lesa humanidad, aun sin familia presente.</li>
+  <li>El nombre de la persona deja de figurar como "NN" en cualquier registro: recupera su identidad legalmente.</li>
+</ul>
+<h3>El rol de las organizaciones de memoria</h3>
+<p>En algunos casos, cuando no hay familia biológica disponible, organismos de derechos humanos como Madres de Plaza de Mayo, Abuelas, H.I.J.O.S. o COFAVI asumen un rol de acompañamiento institucional. No reemplazan a la familia, pero garantizan que la persona no sea restituida en soledad absoluta y que su historia sea preservada en los espacios de memoria colectiva.</p>
+<h3>¿Puedo registrarme como referente si no soy familiar directo?</h3>
+<p>Si conocés a alguien que fue detenido-desaparecido y creés que podría no tener familia que lo busque activamente, podés contactar al EAAF para brindar información. Cada dato —un nombre, una fecha, un lugar de detención— puede ser la pieza que falta para completar una identificación o para encontrar a un familiar que no sabe que está buscando.</p>
+<p>La búsqueda es colectiva. La memoria también.</p>`,
+  },
 ];
