@@ -1,0 +1,385 @@
+---
+import '../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EAAF — Capacitaciones en Ciencias Forenses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; color: #1D1D1B; background: #fff; }
+    h1, h2, h3, h4 { font-family: 'Saira Condensed', sans-serif; text-transform: uppercase; }
+    input, select, button { font-family: 'Roboto', sans-serif; }
+    input:focus, select:focus { outline: 2px solid #E2064A; outline-offset: -1px; }
+    .mix-tag {
+      font-family: 'Saira Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #E2064A;
+      border: 1px solid #E2064A;
+      padding: 2px 8px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ▸ HERO ROJO -->
+  <section style="background:#E2064A; padding:32px 24px 64px;">
+    <div style="max-width:1100px; margin:0 auto;">
+
+      <!-- Logo row -->
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:64px;">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <div style="border:2px solid rgba(255,255,255,0.6); padding:6px 10px;">
+            <span style="font-family:'Saira Condensed',sans-serif; font-size:22px; font-weight:800; color:#fff; letter-spacing:0.08em;">EAAF</span>
+          </div>
+          <div style="border-left:1px solid rgba(255,255,255,0.4); padding-left:16px;">
+            <p style="font-family:'Roboto',sans-serif; font-size:12px; color:rgba(255,255,255,0.85); line-height:1.3; font-weight:300;">Centro Internacional de<br/>Capacitación en Ciencias Forenses</p>
+          </div>
+        </div>
+        <a href="https://eaaf.org/donacion-eaaf/" target="_blank" rel="noopener"
+          style="font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E2064A; background:#fff; padding:10px 24px; text-decoration:none; display:inline-block;">
+          DONACIÓN
+        </a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:3fr 2fr; gap:48px; align-items:start;">
+        <div>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:16px;">
+            ★ Convocatoria abierta 2026
+          </p>
+          <h1 style="font-size:clamp(40px,6vw,72px); font-weight:800; color:#fff; line-height:0.95; margin-bottom:24px; letter-spacing:-0.01em;">
+            CAPACITACIONES<br/>EN CIENCIAS<br/>FORENSES
+          </h1>
+          <p style="font-family:'Roboto',sans-serif; font-size:17px; color:rgba(255,255,255,0.85); line-height:1.6; max-width:480px; margin-bottom:40px; font-weight:300;">
+            Formación intensiva en antropología forense humanitaria. El único programa certificado por el EAAF, con presencia en más de 30 países.
+          </p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="#inscripcion"
+              style="font-family:'Saira Condensed',sans-serif; font-size:16px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E2064A; background:#fff; padding:14px 36px; text-decoration:none; display:inline-block;">
+              INSCRIBIRSE AL PROGRAMA →
+            </a>
+            <a href="#programa"
+              style="font-family:'Saira Condensed',sans-serif; font-size:16px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.85); border:2px solid rgba(255,255,255,0.6); padding:14px 36px; text-decoration:none; display:inline-block;">
+              VER PROGRAMA
+            </a>
+          </div>
+        </div>
+
+        <!-- Panel stats -->
+        <div style="background:rgba(0,0,0,0.15); padding:32px;">
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:24px;">POR QUÉ CONFIAR EN EL EAAF</p>
+          <div style="display:flex; flex-direction:column; gap:0;">
+            {[
+              { num: "1984", label: "Año de fundación", sub: "Más de 40 años de experiencia" },
+              { num: "30+", label: "Países de actuación", sub: "Presencia internacional activa" },
+              { num: "Cientos de", label: "Profesionales formados", sub: "En ediciones anteriores" },
+              { num: "ONU · CICR · USAID", label: "Financiadores de becas", sub: "Apoyo institucional garantizado" },
+            ].map((item, i) => (
+              <div style={`display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-bottom:${i<3?'1px solid rgba(255,255,255,0.15)':'none'};`}>
+                <div style="min-width:90px; flex-shrink:0;">
+                  <p style="font-family:'Saira Condensed',sans-serif; font-size:20px; font-weight:800; color:#fff; line-height:1.1;">{item.num}</p>
+                </div>
+                <div>
+                  <p style="font-family:'Roboto',sans-serif; font-weight:500; color:rgba(255,255,255,0.9); font-size:13px; margin-bottom:2px;">{item.label}</p>
+                  <p style="font-family:'Roboto',sans-serif; color:rgba(255,255,255,0.5); font-size:12px;">{item.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ EL DESAFÍO (Promoción — contexto) -->
+  <section style="background:#F8F8F8; padding:72px 24px; border-bottom:1px solid #E3E3E3;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <span class="mix-tag">Mix: Promoción — Contexto</span>
+      <h2 style="font-size:clamp(30px,4vw,48px); font-weight:800; color:#1D1D1B; margin-bottom:16px; line-height:1.05; max-width:700px;">
+        LATINOAMÉRICA NECESITA MÁS PERITOS FORENSES.
+      </h2>
+      <p style="font-family:'Roboto',sans-serif; font-size:17px; color:#7A7A7A; line-height:1.65; margin-bottom:48px; max-width:580px;">
+        Decenas de miles de casos permanecen sin resolver por falta de personal especializado. La formación existente no alcanza el nivel exigido en tribunales internacionales.
+      </p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0; background:#fff; border:1px solid #E3E3E3;">
+        {[
+          { title: "Escasez de expertos", text: "Menos del 12% de los sistemas judiciales latinoamericanos cuentan con peritos certificados en ciencias forenses humanitarias." },
+          { title: "Casos sin resolver", text: "Más de 80.000 personas permanecen desaparecidas en Latinoamérica, muchos expedientes paralizados por falta de capacidad técnica." },
+          { title: "Brecha de formación", text: "Los programas universitarios convencionales no cubren la metodología de campo, el manejo de restos óseos ni la cadena de custodia internacional." },
+        ].map((item, i) => (
+          <div style={`padding:36px; border-left:${i>0?'1px solid #E3E3E3':'none'};`}>
+            <div style="width:4px; height:32px; background:#E2064A; margin-bottom:20px;"></div>
+            <h3 style="font-size:20px; font-weight:700; color:#1D1D1B; margin-bottom:10px; letter-spacing:0.05em;">{item.title}</h3>
+            <p style="font-family:'Roboto',sans-serif; font-size:14px; color:#7A7A7A; line-height:1.65;">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ PRODUCTO — programa -->
+  <section id="programa" style="background:#fff; padding:80px 24px; border-bottom:1px solid #E3E3E3;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <span class="mix-tag">Mix: Producto</span>
+      <h2 style="font-size:clamp(30px,4vw,48px); font-weight:800; color:#1D1D1B; margin-bottom:16px; line-height:1.05;">
+        UN CURRÍCULO DISEÑADO POR LOS MEJORES
+      </h2>
+      <p style="font-family:'Roboto',sans-serif; font-size:16px; color:#7A7A7A; line-height:1.65; margin-bottom:48px; max-width:520px;">
+        Desarrollado por el equipo científico del EAAF junto con el CICR y expertos de Argentina, México y España.
+      </p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(480px,1fr)); gap:0; border:1px solid #E3E3E3;">
+        {[
+          { mod: "MÓDULO 1", title: "FUNDAMENTOS DE LA ANTROPOLOGÍA FORENSE", weeks: "Semana 1", items: ["Osteología humana avanzada", "Perfil biológico y determinación de identidad", "Tafonomía: qué le pasa al cuerpo después de la muerte"] },
+          { mod: "MÓDULO 2", title: "ARQUEOLOGÍA FORENSE DE CAMPO", weeks: "Semana 1–2", items: ["Protocolo de excavación en fosas comunes", "Documentación y mapeo de sitios", "Tecnologías: georradar y LiDAR aplicado"] },
+          { mod: "MÓDULO 3", title: "GENÉTICA FORENSE APLICADA", weeks: "Semana 2–3", items: ["Extracción y análisis de ADN en restos óseos", "Bases de datos genéticas y cotejo familiar", "Cadena de custodia de muestras biológicas"] },
+          { mod: "MÓDULO 4", title: "MARCO LEGAL E INTERNACIONAL", weeks: "Semana 3–4", items: ["Principios de Minnesota y protocolos ONU", "Elaboración de peritajes admisibles en juicio", "Manejo ético con comunidades y familias de víctimas"] },
+        ].map((mod, i) => (
+          <div style={`padding:36px; border-right:${i%2===0?'1px solid #E3E3E3':'none'}; border-bottom:${i<2?'1px solid #E3E3E3':'none'};`}>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+              <span style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.15em; color:#E2064A;">{mod.mod}</span>
+              <span style="font-family:'Roboto',sans-serif; font-size:12px; color:#ADADAD; background:#F8F8F8; padding:3px 10px; border:1px solid #E3E3E3;">{mod.weeks}</span>
+            </div>
+            <h3 style="font-size:18px; font-weight:700; color:#1D1D1B; margin-bottom:16px; line-height:1.2; letter-spacing:0.03em;">{mod.title}</h3>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+              {mod.items.map(item => (
+                <li style="display:flex; gap:10px; font-family:'Roboto',sans-serif; font-size:14px; color:#7A7A7A; line-height:1.5;">
+                  <span style="color:#E2064A; font-weight:700; flex-shrink:0;">—</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Modalidades -->
+      <div style="background:#F8F8F8; padding:36px; border:1px solid #E3E3E3; border-top:none;">
+        <p style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#ADADAD; margin-bottom:24px;">MODALIDADES DEL PROGRAMA</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:32px;">
+          {[
+            { title: "PRESENCIAL — CABA", text: "Laboratorios en la sede del EAAF, Espacio Memoria (ex ESMA), Buenos Aires." },
+            { title: "IN SITU — TU INSTITUCIÓN", text: "El equipo viaja a implementar el programa en tu propio contexto legal y geográfico." },
+            { title: "MÓDULOS EN LÍNEA", text: "Teoría y marco legal por plataforma digital, disponibles antes y después del trabajo de campo." },
+          ].map(f => (
+            <div>
+              <p style="font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; color:#1D1D1B; margin-bottom:8px; letter-spacing:0.05em;">{f.title}</p>
+              <p style="font-family:'Roboto',sans-serif; font-size:14px; color:#7A7A7A; line-height:1.6;">{f.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ PLAZA -->
+  <section style="background:#1D1D1B; padding:64px 24px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <span style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#E2064A; display:inline-block; margin-bottom:12px;">MIX: PLAZA</span>
+      <h2 style="font-size:clamp(28px,3.5vw,44px); font-weight:800; color:#fff; margin-bottom:40px; letter-spacing:0.02em;">DÓNDE DICTAMOS EL PROGRAMA</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:#333;">
+        {[
+          { city: "BUENOS AIRES", country: "Argentina", note: "Sede central · Lab. genético" },
+          { city: "CIUDAD DE MÉXICO", country: "México", note: "Oficina regional LATAM" },
+          { city: "NUEVA YORK", country: "EE.UU.", note: "Enlace ONU y ONGs" },
+          { city: "IN SITU", country: "Tu institución", note: "Enviamos el equipo" },
+        ].map(loc => (
+          <div style="background:#1D1D1B; padding:32px 24px; border-top:3px solid #E2064A;">
+            <p style="font-family:'Saira Condensed',sans-serif; font-size:20px; font-weight:800; color:#fff; margin-bottom:4px; letter-spacing:0.03em;">{loc.city}</p>
+            <p style="font-family:'Roboto',sans-serif; font-size:13px; color:#7A7A7A; margin-bottom:12px;">{loc.country}</p>
+            <p style="font-family:'Roboto',sans-serif; font-size:13px; color:#E2064A; font-weight:500;">{loc.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ PRECIO -->
+  <section style="background:#fff; padding:80px 24px; border-bottom:1px solid #E3E3E3;">
+    <div style="max-width:800px; margin:0 auto;">
+      <span class="mix-tag">Mix: Precio</span>
+      <h2 style="font-size:clamp(28px,3.5vw,44px); font-weight:800; color:#1D1D1B; margin-bottom:12px; line-height:1.05;">INVERSIÓN EN EL PROGRAMA</h2>
+      <p style="font-family:'Roboto',sans-serif; font-size:16px; color:#7A7A7A; line-height:1.65; margin-bottom:48px; max-width:480px;">
+        El valor refleja tecnología de punta, laboratorios especializados y la experiencia única de los docentes del EAAF.
+      </p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid #E3E3E3;">
+        <div style="padding:40px; border-right:1px solid #E3E3E3;">
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.15em; color:#ADADAD; margin-bottom:16px;">ARANCEL ESTÁNDAR</p>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:56px; font-weight:800; color:#1D1D1B; line-height:1; margin-bottom:4px;">$1.650</p>
+          <p style="font-family:'Roboto',sans-serif; font-size:14px; color:#ADADAD; margin-bottom:28px;">USD</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+            {["Acceso completo a los 4 módulos","Materiales de laboratorio incluidos","Certificación internacional EAAF","Manual técnico digital y físico","Red de egresados latinoamericanos","3 meses de tutoría post-programa"].map(item => (
+              <li style="display:flex; gap:10px; font-family:'Roboto',sans-serif; font-size:14px; color:#54595F; line-height:1.5;">
+                <span style="color:#E2064A; font-weight:700; flex-shrink:0;">—</span>{item}
+              </li>
+            ))}
+          </ul>
+          <a href="#inscripcion" style="display:block; text-align:center; border:2px solid #E2064A; color:#E2064A; font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:14px; text-decoration:none;">
+            INSCRIBIRSE
+          </a>
+        </div>
+
+        <div style="padding:40px; border-top:4px solid #E2064A; position:relative; background:#F8F8F8;">
+          <span style="position:absolute; top:16px; right:16px; background:#E2064A; color:#fff; font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; text-transform:uppercase;">RECOMENDADO</span>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.15em; color:#E2064A; margin-bottom:16px;">BECA INSTITUCIONAL</p>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:56px; font-weight:800; color:#1D1D1B; line-height:1; margin-bottom:4px;">$0</p>
+          <p style="font-family:'Roboto',sans-serif; font-size:14px; color:#ADADAD; margin-bottom:8px;">para calificados</p>
+          <p style="font-family:'Roboto',sans-serif; font-size:13px; color:#7A7A7A; line-height:1.55; margin-bottom:28px;">Financiadas por ONU, CICR o USAID para profesionales de países con crisis activas.</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+            {["Todo lo incluido en el plan estándar","Viaje y alojamiento cubiertos (en algunos casos)","Prioridad en convocatoria de campo","Carta de presentación institucional","Elegibles: peritos, fiscales, ONGs"].map(item => (
+              <li style="display:flex; gap:10px; font-family:'Roboto',sans-serif; font-size:14px; color:#54595F; line-height:1.5;">
+                <span style="color:#E2064A; font-weight:700; flex-shrink:0;">—</span>{item}
+              </li>
+            ))}
+          </ul>
+          <a href="#inscripcion" style="display:block; text-align:center; background:#E2064A; color:#fff; font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:14px; text-decoration:none;">
+            POSTULAR A BECA →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ TESTIMONIOS (Promoción) -->
+  <section style="background:#F8F8F8; padding:80px 24px; border-bottom:1px solid #E3E3E3;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <span class="mix-tag">Mix: Promoción — Testimonios</span>
+      <h2 style="font-size:clamp(28px,3.5vw,44px); font-weight:800; color:#1D1D1B; margin-bottom:48px; letter-spacing:0.02em;">LO QUE DICEN LOS EGRESADOS</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0; background:#fff; border:1px solid #E3E3E3;">
+        {[
+          { name: "Daniela Ríos", role: "Perito forense · Fiscalía de Guatemala", quote: "Antes del programa, nuestro equipo dependía de metodologías informales. Hoy somos referencia regional. El EAAF nos cambió la carrera." },
+          { name: "Carlos Mena", role: "Antropólogo · Universidad de Chile", quote: "No existe otro programa en el mundo con este nivel de profundidad práctica. La semana de campo fue transformadora." },
+          { name: "Leila Hamdan", role: "ONG Humanitaria · El Salvador", quote: "Llegué con becas del CICR y salí con herramientas reales. En 8 meses ya habíamos identificado a 3 personas desaparecidas en nuestra región." },
+        ].map((t, i) => (
+          <div style={`padding:36px; border-left:${i>0?'1px solid #E3E3E3':'none'};`}>
+            <p style="font-family:'Roboto',sans-serif; font-size:16px; font-style:italic; color:#54595F; line-height:1.65; margin-bottom:24px; font-weight:300;">"{t.quote}"</p>
+            <div style="border-top:1px solid #E3E3E3; padding-top:16px;">
+              <p style="font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; color:#1D1D1B; letter-spacing:0.05em;">{t.name}</p>
+              <p style="font-family:'Roboto',sans-serif; font-size:12px; color:#ADADAD; margin-top:2px;">{t.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ FORMULARIO DE INSCRIPCIÓN -->
+  <section id="inscripcion" style="background:#fff; padding:80px 24px; border-bottom:1px solid #E3E3E3;">
+    <div style="max-width:620px; margin:0 auto;">
+      <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#E2064A; margin-bottom:12px;">Cupos limitados · Cierre 30 de septiembre</p>
+      <h2 style="font-size:clamp(28px,3.5vw,44px); font-weight:800; color:#1D1D1B; margin-bottom:12px; line-height:1.05; letter-spacing:0.02em;">
+        INSCRIBIRSE AL PROGRAMA 2026
+      </h2>
+      <p style="font-family:'Roboto',sans-serif; font-size:16px; color:#7A7A7A; margin-bottom:40px; line-height:1.6;">
+        Completá el formulario y un coordinador te contactará en menos de 48 horas hábiles.
+      </p>
+
+      <div style="border-top:4px solid #E2064A; padding:40px; background:#F8F8F8; border:1px solid #E3E3E3; border-top:4px solid #E2064A;">
+        <form style="display:flex; flex-direction:column; gap:18px;" onsubmit="return false;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div>
+              <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">Nombre</label>
+              <input type="text" placeholder="Ana" style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff;" />
+            </div>
+            <div>
+              <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">Apellido</label>
+              <input type="text" placeholder="García" style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff;" />
+            </div>
+          </div>
+          <div>
+            <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">Correo electrónico institucional</label>
+            <input type="email" placeholder="ana@fiscalia.gob.mx" style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff;" />
+          </div>
+          <div>
+            <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">Institución</label>
+            <input type="text" placeholder="Fiscalía General / Universidad / ONG..." style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff;" />
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div>
+              <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">País</label>
+              <select style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff; appearance:none;">
+                <option value="">Seleccionar</option>
+                <option>Argentina</option><option>México</option><option>Colombia</option>
+                <option>Chile</option><option>Perú</option><option>Guatemala</option>
+                <option>Honduras</option><option>El Salvador</option><option>Bolivia</option>
+                <option>Ecuador</option><option>Venezuela</option><option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">Modalidad</label>
+              <select style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff; appearance:none;">
+                <option value="">Seleccionar</option>
+                <option>Presencial — Buenos Aires</option>
+                <option>In Situ — mi institución</option>
+                <option>Consultar disponibilidad</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label style="display:block; font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#54595F; margin-bottom:6px;">¿Solicita beca institucional?</label>
+            <select style="width:100%; border:1px solid #D9D9D9; padding:12px 14px; font-size:14px; background:#fff; appearance:none;">
+              <option value="">Seleccionar</option>
+              <option>Sí, requiero beca total</option>
+              <option>Sí, requiero beca parcial</option>
+              <option>No, pago el arancel estándar</option>
+              <option>Mi institución cubre el costo</option>
+            </select>
+          </div>
+          <button type="submit"
+            style="background:#E2064A; color:#fff; font-family:'Saira Condensed',sans-serif; font-size:16px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:16px; border:none; cursor:pointer; margin-top:8px;">
+            ENVIAR SOLICITUD DE INSCRIPCIÓN →
+          </button>
+        </form>
+        <p style="font-family:'Roboto',sans-serif; text-align:center; font-size:12px; color:#ADADAD; margin-top:16px;">
+          Un coordinador te contactará en 48 horas hábiles para confirmar disponibilidad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ▸ FOOTER -->
+  <footer style="background:#E2064A; padding:48px 24px 32px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; margin-bottom:40px;">
+        <div>
+          <div style="border:2px solid rgba(255,255,255,0.6); padding:4px 8px; display:inline-block; margin-bottom:16px;">
+            <span style="font-family:'Saira Condensed',sans-serif; font-size:18px; font-weight:800; color:#fff; letter-spacing:0.08em;">EAAF CAPACITACIÓN</span>
+          </div>
+          <p style="font-family:'Roboto',sans-serif; font-size:14px; color:rgba(255,255,255,0.8); line-height:1.65; max-width:280px;">Centro Internacional de Capacitación en Ciencias Forenses. Buenos Aires, Argentina.</p>
+        </div>
+        <div>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px;">SEDE CENTRAL</p>
+          <p style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.75); line-height:1.8;">Espacio Memoria<br/>y Derechos Humanos<br/>Buenos Aires, Argentina</p>
+        </div>
+        <div>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px;">OFICINAS</p>
+          <p style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.75); line-height:1.8;">Nueva York · México<br/>Córdoba · Sudáfrica</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:24px;">
+        <p style="font-family:'Roboto',sans-serif; font-size:12px; color:rgba(255,255,255,0.5);">© 2026 EAAF — Organización científica no gubernamental sin fines de lucro</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

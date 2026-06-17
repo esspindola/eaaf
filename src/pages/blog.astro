@@ -1,0 +1,189 @@
+---
+import '../styles/global.css';
+import { posts, catColor } from '../data/posts';
+
+const categories = ["Todos", "Identificación y ADN", "Preguntas Frecuentes", "Ciencia y Trabajo Forense", "Memoria, Verdad y Justicia"];
+const featured = posts.find(p => p.featured);
+const grid = posts.filter(p => !p.featured);
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novedades — EAAF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; color: #1D1D1B; background: #fff; }
+    h1, h2, h3, h4 { font-family: 'Saira Condensed', sans-serif; text-transform: uppercase; }
+    input, button { font-family: 'Roboto', sans-serif; }
+    input:focus { outline: 2px solid #E2064A; outline-offset: -1px; }
+    a { text-decoration: none; color: inherit; }
+    .card { transition: border-top-color 0.15s; }
+    .card:hover { border-top-color: #E2064A !important; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section style="background:#E2064A; padding:32px 24px 64px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:64px;">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <div style="border:2px solid rgba(255,255,255,0.6); padding:6px 10px;">
+            <span style="font-family:'Saira Condensed',sans-serif; font-size:22px; font-weight:800; color:#fff; letter-spacing:0.08em;">EAAF</span>
+          </div>
+          <div style="border-left:1px solid rgba(255,255,255,0.4); padding-left:16px;">
+            <p style="font-family:'Roboto',sans-serif; font-size:12px; color:rgba(255,255,255,0.85); line-height:1.3; font-weight:300;">Equipo Argentino de<br/>Antropología Forense</p>
+          </div>
+        </div>
+        <a href="https://eaaf.org/donacion-eaaf/" target="_blank" rel="noopener"
+          style="font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E2064A; background:#fff; padding:10px 24px; display:inline-block;">
+          DONACIÓN
+        </a>
+      </div>
+      <div style="max-width:700px;">
+        <p style="font-family:'Saira Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:16px;">Sección institucional — Fidelización</p>
+        <h1 style="font-size:clamp(44px,7vw,80px); font-weight:800; color:#fff; line-height:0.95; margin-bottom:24px; letter-spacing:-0.01em;">NOVEDADES</h1>
+        <p style="font-family:'Roboto',sans-serif; font-size:18px; color:rgba(255,255,255,0.85); line-height:1.6; max-width:520px; font-weight:300;">Ciencia, testimonios e investigación al servicio de la memoria, la verdad y la justicia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section style="background:#1D1D1B; padding:20px 24px; border-bottom:1px solid #333;">
+    <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+      <span style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.15em; color:#7A7A7A; margin-right:8px; text-transform:uppercase;">CATEGORÍAS:</span>
+      {categories.map((cat, i) => (
+        <button style={`font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:6px 14px; border:1px solid ${i===0?'#E2064A':'#333'}; background:${i===0?'#E2064A':'transparent'}; color:${i===0?'#fff':'#7A7A7A'}; cursor:pointer;`}>
+          {cat}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- ARTÍCULO DESTACADO -->
+  {featured && (
+    <section style="max-width:1100px; margin:0 auto; padding:56px 24px;">
+      <p style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#ADADAD; margin-bottom:28px; display:flex; align-items:center; gap:12px;">
+        <span style="width:32px; height:2px; background:#E2064A; display:inline-block;"></span>
+        ARTÍCULO PRINCIPAL
+      </p>
+      <a href={`/articulos/${featured.id}`} style="display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid #E3E3E3; border-top:4px solid #E2064A;">
+        <div style="padding:40px; border-right:1px solid #E3E3E3;">
+          <span style={`font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:${catColor[featured.category]??'#555'}; border-left:3px solid ${catColor[featured.category]??'#555'}; padding-left:8px; display:block; margin-bottom:20px;`}>{featured.category}</span>
+          <h2 style="font-size:clamp(22px,2.5vw,36px); font-weight:800; color:#1D1D1B; line-height:1.1; margin-bottom:16px; letter-spacing:0.01em;">{featured.title}</h2>
+          <p style="font-family:'Roboto',sans-serif; font-size:15px; color:#54595F; line-height:1.7; font-weight:300;">{featured.excerpt}</p>
+        </div>
+        <div style="padding:40px; display:flex; flex-direction:column; justify-content:space-between; background:#FAFAFA;">
+          <div>
+            <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#ADADAD; margin-bottom:8px;">AUTOR</p>
+            <p style="font-family:'Roboto',sans-serif; font-size:14px; color:#1D1D1B; font-weight:500; margin-bottom:4px;">{featured.author}</p>
+            <p style="font-family:'Roboto',sans-serif; font-size:13px; color:#ADADAD;">{featured.date} · {featured.read} de lectura</p>
+          </div>
+          <div style="margin-top:32px;">
+            <span style="font-family:'Saira Condensed',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:#E2064A; padding:12px 24px; display:inline-block;">LEER ARTÍCULO →</span>
+          </div>
+        </div>
+      </a>
+    </section>
+  )}
+
+  <!-- SEPARADOR -->
+  <div style="max-width:1100px; margin:0 auto; padding:0 24px;"><div style="border-top:1px solid #E3E3E3;"></div></div>
+
+  <!-- GRILLA -->
+  <section style="max-width:1100px; margin:0 auto; padding:48px 24px 80px;">
+    <p style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#ADADAD; margin-bottom:28px; display:flex; align-items:center; gap:12px;">
+      <span style="width:32px; height:2px; background:#E2064A; display:inline-block;"></span>
+      MÁS ARTÍCULOS
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:#E3E3E3;">
+      {grid.map((post) => (
+        <a href={`/articulos/${post.id}`} class="card" style="background:#fff; padding:28px; display:flex; flex-direction:column; border-top:3px solid transparent;">
+          <div style="margin-bottom:12px;">
+            <span style={`font-family:'Saira Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:${catColor[post.category]??'#555'}; border-left:3px solid ${catColor[post.category]??'#555'}; padding-left:8px;`}>{post.category}</span>
+          </div>
+          <h3 style="font-size:16px; font-weight:700; color:#1D1D1B; line-height:1.25; margin-bottom:10px; letter-spacing:0.02em; flex:1;">{post.title}</h3>
+          <p style="font-family:'Roboto',sans-serif; font-size:13px; color:#7A7A7A; line-height:1.65; margin-bottom:20px; font-weight:300;">{post.excerpt}</p>
+          <div style="border-top:1px solid #F0F0F0; padding-top:14px; display:flex; align-items:center; justify-content:space-between;">
+            <p style="font-family:'Roboto',sans-serif; font-size:11px; color:#ADADAD;">{post.date} · {post.read}</p>
+            <span style="font-family:'Saira Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#E2064A;">LEER →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section style="background:#1D1D1B; padding:72px 24px;">
+    <div style="max-width:600px; margin:0 auto; text-align:center;">
+      <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#E2064A; margin-bottom:12px;">MANTENTE INFORMADO</p>
+      <h2 style="font-size:clamp(28px,4vw,48px); font-weight:800; color:#fff; margin-bottom:16px; line-height:1.05; letter-spacing:0.02em;">RECIBÍ LAS NOVEDADES DEL EAAF</h2>
+      <p style="font-family:'Roboto',sans-serif; font-size:16px; color:#7A7A7A; line-height:1.65; margin-bottom:36px; font-weight:300;">Nuevas identificaciones, publicaciones científicas, convocatorias y testimonios. Una vez por mes, sin spam.</p>
+      <form style="display:flex; gap:0; max-width:440px; margin:0 auto;" onsubmit="return false;">
+        <input type="email" placeholder="tu@email.com" style="flex:1; background:#2a2a2a; border:1px solid #333; border-right:none; color:#fff; padding:14px 18px; font-size:14px;" />
+        <button type="submit" style="background:#E2064A; color:#fff; font-family:'Saira Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:14px 24px; border:none; cursor:pointer; white-space:nowrap; flex-shrink:0;">SUSCRIBIRSE</button>
+      </form>
+      <p style="font-family:'Roboto',sans-serif; color:#7A7A7A; font-size:12px; margin-top:12px;">Sin spam · Baja cuando quieras</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#E2064A; padding:48px 24px 32px;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px;">
+        <div>
+          <div style="border:2px solid rgba(255,255,255,0.6); padding:4px 8px; display:inline-block; margin-bottom:16px;">
+            <span style="font-family:'Saira Condensed',sans-serif; font-size:18px; font-weight:800; color:#fff; letter-spacing:0.08em;">EAAF</span>
+          </div>
+          <p style="font-family:'Roboto',sans-serif; font-size:14px; color:rgba(255,255,255,0.8); line-height:1.65; max-width:240px; margin-bottom:20px;">Equipo Argentino de Antropología Forense. Organización científica no gubernamental.</p>
+          <div style="display:flex; gap:14px;">
+            {[
+              { href:"https://www.facebook.com/EAAFoficial", d:'<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>' },
+              { href:"https://www.instagram.com/eaafoficial", d:'<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>', stroke:true },
+              { href:"https://x.com/eaafoficial", d:'<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>' },
+              { href:"https://www.youtube.com/c/EAAFoficial", d:'<path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>' },
+            ].map(s => (
+              <a href={s.href} target="_blank" rel="noopener" style="color:rgba(255,255,255,0.7);">
+                <svg width="18" height="18" fill={s.stroke?"none":"currentColor"} stroke={s.stroke?"currentColor":"none"} stroke-width="1.8" viewBox="0 0 24 24">
+                  <Fragment set:html={s.d} />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px;">CATEGORÍAS</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+            {["Identificación y ADN","Preguntas Frecuentes","Ciencia Forense","Memoria, Verdad y Justicia"].map(l => (
+              <li><a href="#" style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">{l}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px;">ORGANIZACIÓN</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+            <li><a href="https://eaaf.org" target="_blank" rel="noopener" style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">Sitio oficial EAAF</a></li>
+            <li><a href="#" style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">Iniciar búsqueda</a></li>
+            <li><a href="#" style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">Capacitación forense</a></li>
+            <li><a href="https://eaaf.org/donacion-eaaf/" target="_blank" rel="noopener" style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">Hacer una donación</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px;">CONTACTO</p>
+          <p style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7); line-height:1.8;">0800 345 3236<br/>iniciativa@eaaf.org<br/>Buenos Aires, Argentina</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:24px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px;">
+        <p style="font-family:'Roboto',sans-serif; font-size:12px; color:rgba(255,255,255,0.5);">© 2026 EAAF — Espacio Memoria y Derechos Humanos, Buenos Aires, Argentina</p>
+        <p style="font-family:'Roboto',sans-serif; font-size:12px; color:rgba(255,255,255,0.4);">Sección institucional con fines académicos</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
