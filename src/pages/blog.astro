@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import { posts, catColor } from '../data/posts';
 
-const categories = ["Todos", "Identificación y ADN", "Preguntas Frecuentes", "Ciencia y Trabajo Forense", "Memoria, Verdad y Justicia"];
+const categories = ["Todos", "Identificación y ADN", "Preguntas Frecuentes para Familias", "Ciencia y Trabajo Forense", "Memoria, Verdad y Justicia"];
 const featured = posts.find(p => p.featured);
 const grid = posts.filter(p => !p.featured);
 ---
@@ -165,7 +165,7 @@ const grid = posts.filter(p => !p.featured);
         <div>
           <p style="font-family:'Saira Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:16px;">CATEGORÍAS</p>
           <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
-            {["Identificación y ADN","Preguntas Frecuentes","Ciencia Forense","Memoria, Verdad y Justicia"].map(l => (
+            {["Identificación y ADN","Preguntas Frecuentes para Familias","Ciencia y Trabajo Forense","Memoria, Verdad y Justicia"].map(l => (
               <li><a href="#" style="font-family:'Roboto',sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">{l}</a></li>
             ))}
           </ul>
